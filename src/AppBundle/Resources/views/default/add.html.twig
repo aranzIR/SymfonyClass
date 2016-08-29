@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+            <a href="{{path('app_default_index')}}" style="text-decoration:none">home</a>
+
+                {% if messege is defined %}
+                <h1>{{messege}}</h1>
+                {% else %}
+                <h1>no messege</h1>
+                {% endif %}
+            </div>
+            {{ form_start(myform,{'attr':{'novalidate' : 'novalidate'}}) }}
+            {{ form_widget(myform) }}
+            {{ form_end(myform) }}
+        </div>
+    </div>
+{% endblock %}
+
